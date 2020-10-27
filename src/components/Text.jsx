@@ -4,34 +4,13 @@ import theme from "../theme";
 
 const styles = StyleSheet.create({
   text: {
-    color: theme.colors.textPrimary,
-    fontSize: theme.fontSizes.body,
-    fontFamily: theme.fonts.main,
-    fontWeight: theme.fontWeights.normal,
-  },
-  colorTextSecondary: {
-    color: theme.colors.textSecondary,
-  },
-  colorPrimary: {
-    color: theme.colors.primary,
-  },
-  fontSizeSubheading: {
-    fontSize: theme.fontSizes.subheading,
-  },
-  fontWeightBold: {
-    fontWeight: theme.fontWeights.bold,
+    color: theme.colors.dark[4],
+    fontSize: theme.fontSizes.default,
   },
 });
 
-const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
-  const textStyle = [
-    styles.text,
-    color === "textSecondary" && styles.colorTextSecondary,
-    color === "primary" && styles.colorPrimary,
-    fontSize === "subheading" && styles.fontSizeSubheading,
-    fontWeight === "bold" && styles.fontWeightBold,
-    style,
-  ];
+const Text = ({ style, ...props }) => {
+  const textStyle = [styles.text, style];
 
   return <NativeText style={textStyle} {...props} />;
 };
