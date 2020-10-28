@@ -1,6 +1,7 @@
 import Constants from "expo-constants";
 import React from "react";
 import { View, StyleSheet } from "react-native";
+import { Link } from "react-router-native";
 
 import AppBarTab from "./AppBarTab";
 import theme from "../theme";
@@ -23,8 +24,8 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <AppBarTab text="Repositories" />
-      <AppBarTab text="Sign in" />
+      <Link to="/" component={AppBarTab} text="Repositories" />
+      <Link to="/sign-in" component={AppBarTab} text="Sign in" />
     </View>
   );
 };
