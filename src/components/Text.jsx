@@ -1,10 +1,11 @@
 import React from "react";
 import { Text as NativeText, StyleSheet } from "react-native";
+
 import theme from "../theme";
 
 const styles = StyleSheet.create({
   text: {
-    color: theme.colors.dark[4],
+    color: theme.colors.dark.intensity_4,
     fontSize: theme.fontSizes.default,
   },
 });
